@@ -139,7 +139,7 @@
                 <version>${allure-maven.version}</version>
                 <configuration>
                     <reportVersion>${reportVersion.version}</reportVersion>
-                    <resultsDirectory>allure-results</resultsDirectory>
+                    <resultsDirectory>allure.properties</resultsDirectory>
                 </configuration>
             </plugin>
         </plugins>
