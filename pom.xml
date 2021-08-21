@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.webui</groupId>
-    <artifactId>AutoWebUI</artifactId>
+    <groupId>org.example</groupId>
+    <artifactId>AutoBackend</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -23,7 +23,8 @@
         <reportVersion.version>2.4.1</reportVersion.version>
         <slf4j-simple.version>1.7.31</slf4j-simple.version>
         <rest-assured.version>4.4.0</rest-assured.version>
-        <commons-io.version>2.11.0</commons-io.version>
+        <commons-io.version>2.8.0</commons-io.version>
+        <allure-rest-assured.version>2.14.0</allure-rest-assured.version>
     </properties>
 
     <dependencies>
@@ -56,6 +57,14 @@
             <artifactId>junit-platform-console-standalone</artifactId>
             <version>1.7.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.1</version>
+            <scope>test</scope>
+        </dependency>
+
 
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -81,6 +90,42 @@
             <artifactId>commons-io</artifactId>
             <version>${commons-io.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-rest-assured -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-rest-assured</artifactId>
+            <version>${allure-rest-assured.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.12.3</version>
+        </dependency>
+
+
+
+
+
 
 
 
@@ -102,11 +147,11 @@
                     </argLine>
                 </configuration>
                 <dependencies>
-<!--                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>-->
+                    <!--                    <dependency>
+                                            <groupId>org.aspectj</groupId>
+                                            <artifactId>aspectjweaver</artifactId>
+                                            <version>${aspectj.version}</version>
+                                        </dependency>-->
                     <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
                     <dependency>
                         <groupId>org.aspectj</groupId>
@@ -123,7 +168,7 @@
                 <version>${allure-maven.version}</version>
                 <configuration>
                     <reportVersion>${reportVersion.version}</reportVersion>
-                    <resultsDirectory>target/allure-results</resultsDirectory>
+                    <resultsDirectory>allure.properties</resultsDirectory>
                 </configuration>
             </plugin>
         </plugins>
